@@ -1,6 +1,6 @@
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-
+import "./styles.css";
 import App from "./App";
 
 // 早期為了讓使用者使用創造元素所使用的API
@@ -13,15 +13,23 @@ React.createElement("div", undefined, "hello world");
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
-
+let websiteMenu = ["首頁", "最新消息", "關於我們"];
+let webstieArr = websiteMenu.map((list) => <li className="list">{list}</li>);
 root.render(
   <StrictMode>
     <>
-      <div>This is in Render</div>
+      <div>Hello World</div>
       <div>{`這裡面可以寫表達式，不過要寫字串要使用模板字串符2+2=${
         2 + 2
       }`}</div>
-      <App />
+      {/* 如果需要在模板中使用class需要使用className */}
+      <h1 className="Class01">我是測試Class用的文字啦</h1>
+      {/* 這裡有兩層大括號：外層的 {} 是JSX的語法，告訴React我們要插入一個JavaScript表達式；內層的 {} 則是定義JavaScript物件的語法，其中的物件就是CSS的style屬性。 */}
+      <h1 style={{ fontSize: "30px", fontWeight: "bold" }}>
+        我是測試Class用的文字啦
+      </h1>
+      {/* React會自動展開Array元素 */}
+      <ul>{webstieArr}</ul>
     </>
   </StrictMode>
 );
