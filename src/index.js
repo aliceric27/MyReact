@@ -2,6 +2,7 @@ import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
 import App from "./App";
+import Menuitem from "../component/MenuItem";
 
 // 早期為了讓使用者使用創造元素所使用的API
 /*
@@ -30,6 +31,7 @@ root.render(
       </h1>
       {/* React會自動展開Array元素 */}
       <ul>{webstieArr}</ul>
+      <Menuitem version="1" data="一些測試文字" />
     </>
   </StrictMode>
 );
